@@ -19,7 +19,7 @@ contract Person {
 
 contract Patient is Person {
 
-  function getName (string _name) internal {
+  function getName (string storage _name) internal {
     string storage patientName = _name;
   }
 
