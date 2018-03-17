@@ -11,7 +11,7 @@ contract Patient {
         string desc;
     }
 
-    struct Basic {
+    struct Information {
         string name;
         uint date;
         string gen;
@@ -22,12 +22,7 @@ contract Patient {
 
     function basicInfo (string _name, uint _date, string _gen, string _nat) {
         require(search() == 61);
-        Basic info = Basic(_name, _date, _gen, _nat);
-    }
-
-    function returnBasicInfo () returns(string name, uint dob, string gender, string nat) {
-        require(search() == 61);
-        return (name, dob, gender, nat);
+        Information memory info = Information(_name, _date, _gen, _nat);
     }
 
     function addRecord (string _ofType, string _desc) {
