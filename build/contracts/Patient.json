@@ -1,0 +1,1103 @@
+{
+  "contractName": "Patient",
+  "abi": [],
+  "bytecode": "0x60606040523415600e57600080fd5b603580601b6000396000f3006060604052600080fd00a165627a7a72305820041f0638640c103d49f5dd3d3e307ef2e84f2d1a6af80cf272223f58b8aab9910029",
+  "deployedBytecode": "0x6060604052600080fd00a165627a7a72305820041f0638640c103d49f5dd3d3e307ef2e84f2d1a6af80cf272223f58b8aab9910029",
+  "sourceMap": "311:185:1:-;;;;;;;;;;;;;;;;;",
+  "deployedSourceMap": "311:185:1:-;;;;;",
+  "source": "pragma solidity ^0.4.19;\r\n\r\n//Lets say we have a patient: 1324, Doctor: 5453 and their connecting clone: 9394.\r\n\r\n\r\ncontract Person {\r\n\r\n  struct Clone {\r\n    address add;\r\n  }\r\n  Clone[] internal clones;\r\n\r\n  function linkClone (address _newClone) internal {\r\n    clones.push(Clone(_newClone));\r\n\r\n  }\r\n\r\n}\r\n\r\ncontract Patient is Person {\r\n\r\n  function getName (string storage _name) internal {\r\n    string storage patientName = _name;\r\n  }\r\n\r\n  function getData () internal view {\r\n\r\n  }\r\n\r\n\r\n}\r\n\r\ncontract Doctor is Person {\r\n\r\n  function createNewClone () internal {\r\n\r\n  }\r\n\r\n}\r\n",
+  "sourcePath": "C:\\Users\\Macka\\Documents\\GitHub\\BrokenCode\\contracts\\TheContracts.sol",
+  "ast": {
+    "absolutePath": "/C/Users/Macka/Documents/GitHub/BrokenCode/contracts/TheContracts.sol",
+    "exportedSymbols": {
+      "Doctor": [
+        103
+      ],
+      "Patient": [
+        96
+      ],
+      "Person": [
+        79
+      ]
+    },
+    "id": 104,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 58,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".19"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 79,
+        "linearizedBaseContracts": [
+          79
+        ],
+        "name": "Person",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Person.Clone",
+            "id": 61,
+            "members": [
+              {
+                "constant": false,
+                "id": 60,
+                "name": "add",
+                "nodeType": "VariableDeclaration",
+                "scope": 61,
+                "src": "159:11:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 59,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "159:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Clone",
+            "nodeType": "StructDefinition",
+            "scope": 79,
+            "src": "139:37:1",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 64,
+            "name": "clones",
+            "nodeType": "VariableDeclaration",
+            "scope": 79,
+            "src": "180:23:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_struct$_Clone_$61_storage_$dyn_storage",
+              "typeString": "struct Person.Clone storage ref[] storage ref"
+            },
+            "typeName": {
+              "baseType": {
+                "contractScope": null,
+                "id": 62,
+                "name": "Clone",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 61,
+                "src": "180:5:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Clone_$61_storage_ptr",
+                  "typeString": "struct Person.Clone storage pointer"
+                }
+              },
+              "id": 63,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "180:7:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_struct$_Clone_$61_storage_$dyn_storage_ptr",
+                "typeString": "struct Person.Clone storage ref[] storage pointer"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 77,
+              "nodeType": "Block",
+              "src": "258:44:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 73,
+                            "name": "_newClone",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 66,
+                            "src": "283:9:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 72,
+                          "name": "Clone",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 61,
+                          "src": "277:5:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_struct$_Clone_$61_storage_ptr_$",
+                            "typeString": "type(struct Person.Clone storage pointer)"
+                          }
+                        },
+                        "id": 74,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "structConstructorCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "277:16:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Clone_$61_memory",
+                          "typeString": "struct Person.Clone memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_Clone_$61_memory",
+                          "typeString": "struct Person.Clone memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 69,
+                        "name": "clones",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 64,
+                        "src": "265:6:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Clone_$61_storage_$dyn_storage",
+                          "typeString": "struct Person.Clone storage ref[] storage ref"
+                        }
+                      },
+                      "id": 71,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "265:11:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_Clone_$61_storage_$returns$_t_uint256_$",
+                        "typeString": "function (struct Person.Clone storage ref) returns (uint256)"
+                      }
+                    },
+                    "id": 75,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "265:29:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 76,
+                  "nodeType": "ExpressionStatement",
+                  "src": "265:29:1"
+                }
+              ]
+            },
+            "id": 78,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "linkClone",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 67,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 66,
+                  "name": "_newClone",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 78,
+                  "src": "230:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 65,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "230:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "229:19:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 68,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "258:0:1"
+            },
+            "scope": 79,
+            "src": "210:92:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 104,
+        "src": "116:191:1"
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": [],
+            "baseName": {
+              "contractScope": null,
+              "id": 80,
+              "name": "Person",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 79,
+              "src": "331:6:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Person_$79",
+                "typeString": "contract Person"
+              }
+            },
+            "id": 81,
+            "nodeType": "InheritanceSpecifier",
+            "src": "331:6:1"
+          }
+        ],
+        "contractDependencies": [
+          79
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 96,
+        "linearizedBaseContracts": [
+          96,
+          79
+        ],
+        "name": "Patient",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 90,
+              "nodeType": "Block",
+              "src": "394:47:1",
+              "statements": [
+                {
+                  "assignments": [
+                    87
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 87,
+                      "name": "patientName",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 91,
+                      "src": "401:26:1",
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage_ptr",
+                        "typeString": "string storage pointer"
+                      },
+                      "typeName": {
+                        "id": 86,
+                        "name": "string",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "401:6:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_storage_ptr",
+                          "typeString": "string storage pointer"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 89,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "id": 88,
+                    "name": "_name",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 83,
+                    "src": "430:5:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string storage pointer"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "401:34:1"
+                }
+              ]
+            },
+            "id": 91,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "getName",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 84,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 83,
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 91,
+                  "src": "363:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string storage pointer"
+                  },
+                  "typeName": {
+                    "id": 82,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "363:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string storage pointer"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "362:22:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 85,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "394:0:1"
+            },
+            "scope": 96,
+            "src": "345:96:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 94,
+              "nodeType": "Block",
+              "src": "481:8:1",
+              "statements": []
+            },
+            "id": 95,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getData",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 92,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "464:2:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 93,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "481:0:1"
+            },
+            "scope": 96,
+            "src": "447:42:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 104,
+        "src": "311:185:1"
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": [],
+            "baseName": {
+              "contractScope": null,
+              "id": 97,
+              "name": "Person",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 79,
+              "src": "519:6:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Person_$79",
+                "typeString": "contract Person"
+              }
+            },
+            "id": 98,
+            "nodeType": "InheritanceSpecifier",
+            "src": "519:6:1"
+          }
+        ],
+        "contractDependencies": [
+          79
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 103,
+        "linearizedBaseContracts": [
+          103,
+          79
+        ],
+        "name": "Doctor",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 101,
+              "nodeType": "Block",
+              "src": "569:8:1",
+              "statements": []
+            },
+            "id": 102,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "createNewClone",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 99,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "557:2:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 100,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "569:0:1"
+            },
+            "scope": 103,
+            "src": "533:44:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 104,
+        "src": "500:82:1"
+      }
+    ],
+    "src": "0:584:1"
+  },
+  "legacyAST": {
+    "absolutePath": "/C/Users/Macka/Documents/GitHub/BrokenCode/contracts/TheContracts.sol",
+    "exportedSymbols": {
+      "Doctor": [
+        103
+      ],
+      "Patient": [
+        96
+      ],
+      "Person": [
+        79
+      ]
+    },
+    "id": 104,
+    "nodeType": "SourceUnit",
+    "nodes": [
+      {
+        "id": 58,
+        "literals": [
+          "solidity",
+          "^",
+          "0.4",
+          ".19"
+        ],
+        "nodeType": "PragmaDirective",
+        "src": "0:24:1"
+      },
+      {
+        "baseContracts": [],
+        "contractDependencies": [],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 79,
+        "linearizedBaseContracts": [
+          79
+        ],
+        "name": "Person",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "canonicalName": "Person.Clone",
+            "id": 61,
+            "members": [
+              {
+                "constant": false,
+                "id": 60,
+                "name": "add",
+                "nodeType": "VariableDeclaration",
+                "scope": 61,
+                "src": "159:11:1",
+                "stateVariable": false,
+                "storageLocation": "default",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_address",
+                  "typeString": "address"
+                },
+                "typeName": {
+                  "id": 59,
+                  "name": "address",
+                  "nodeType": "ElementaryTypeName",
+                  "src": "159:7:1",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  }
+                },
+                "value": null,
+                "visibility": "internal"
+              }
+            ],
+            "name": "Clone",
+            "nodeType": "StructDefinition",
+            "scope": 79,
+            "src": "139:37:1",
+            "visibility": "public"
+          },
+          {
+            "constant": false,
+            "id": 64,
+            "name": "clones",
+            "nodeType": "VariableDeclaration",
+            "scope": 79,
+            "src": "180:23:1",
+            "stateVariable": true,
+            "storageLocation": "default",
+            "typeDescriptions": {
+              "typeIdentifier": "t_array$_t_struct$_Clone_$61_storage_$dyn_storage",
+              "typeString": "struct Person.Clone storage ref[] storage ref"
+            },
+            "typeName": {
+              "baseType": {
+                "contractScope": null,
+                "id": 62,
+                "name": "Clone",
+                "nodeType": "UserDefinedTypeName",
+                "referencedDeclaration": 61,
+                "src": "180:5:1",
+                "typeDescriptions": {
+                  "typeIdentifier": "t_struct$_Clone_$61_storage_ptr",
+                  "typeString": "struct Person.Clone storage pointer"
+                }
+              },
+              "id": 63,
+              "length": null,
+              "nodeType": "ArrayTypeName",
+              "src": "180:7:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_array$_t_struct$_Clone_$61_storage_$dyn_storage_ptr",
+                "typeString": "struct Person.Clone storage ref[] storage pointer"
+              }
+            },
+            "value": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 77,
+              "nodeType": "Block",
+              "src": "258:44:1",
+              "statements": [
+                {
+                  "expression": {
+                    "argumentTypes": null,
+                    "arguments": [
+                      {
+                        "argumentTypes": null,
+                        "arguments": [
+                          {
+                            "argumentTypes": null,
+                            "id": 73,
+                            "name": "_newClone",
+                            "nodeType": "Identifier",
+                            "overloadedDeclarations": [],
+                            "referencedDeclaration": 66,
+                            "src": "283:9:1",
+                            "typeDescriptions": {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          }
+                        ],
+                        "expression": {
+                          "argumentTypes": [
+                            {
+                              "typeIdentifier": "t_address",
+                              "typeString": "address"
+                            }
+                          ],
+                          "id": 72,
+                          "name": "Clone",
+                          "nodeType": "Identifier",
+                          "overloadedDeclarations": [],
+                          "referencedDeclaration": 61,
+                          "src": "277:5:1",
+                          "typeDescriptions": {
+                            "typeIdentifier": "t_type$_t_struct$_Clone_$61_storage_ptr_$",
+                            "typeString": "type(struct Person.Clone storage pointer)"
+                          }
+                        },
+                        "id": 74,
+                        "isConstant": false,
+                        "isLValue": false,
+                        "isPure": false,
+                        "kind": "structConstructorCall",
+                        "lValueRequested": false,
+                        "names": [],
+                        "nodeType": "FunctionCall",
+                        "src": "277:16:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_struct$_Clone_$61_memory",
+                          "typeString": "struct Person.Clone memory"
+                        }
+                      }
+                    ],
+                    "expression": {
+                      "argumentTypes": [
+                        {
+                          "typeIdentifier": "t_struct$_Clone_$61_memory",
+                          "typeString": "struct Person.Clone memory"
+                        }
+                      ],
+                      "expression": {
+                        "argumentTypes": null,
+                        "id": 69,
+                        "name": "clones",
+                        "nodeType": "Identifier",
+                        "overloadedDeclarations": [],
+                        "referencedDeclaration": 64,
+                        "src": "265:6:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_array$_t_struct$_Clone_$61_storage_$dyn_storage",
+                          "typeString": "struct Person.Clone storage ref[] storage ref"
+                        }
+                      },
+                      "id": 71,
+                      "isConstant": false,
+                      "isLValue": false,
+                      "isPure": false,
+                      "lValueRequested": false,
+                      "memberName": "push",
+                      "nodeType": "MemberAccess",
+                      "referencedDeclaration": null,
+                      "src": "265:11:1",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_function_arraypush_nonpayable$_t_struct$_Clone_$61_storage_$returns$_t_uint256_$",
+                        "typeString": "function (struct Person.Clone storage ref) returns (uint256)"
+                      }
+                    },
+                    "id": 75,
+                    "isConstant": false,
+                    "isLValue": false,
+                    "isPure": false,
+                    "kind": "functionCall",
+                    "lValueRequested": false,
+                    "names": [],
+                    "nodeType": "FunctionCall",
+                    "src": "265:29:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_uint256",
+                      "typeString": "uint256"
+                    }
+                  },
+                  "id": 76,
+                  "nodeType": "ExpressionStatement",
+                  "src": "265:29:1"
+                }
+              ]
+            },
+            "id": 78,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "linkClone",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 67,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 66,
+                  "name": "_newClone",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 78,
+                  "src": "230:17:1",
+                  "stateVariable": false,
+                  "storageLocation": "default",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_address",
+                    "typeString": "address"
+                  },
+                  "typeName": {
+                    "id": 65,
+                    "name": "address",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "230:7:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_address",
+                      "typeString": "address"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "229:19:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 68,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "258:0:1"
+            },
+            "scope": 79,
+            "src": "210:92:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 104,
+        "src": "116:191:1"
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": [],
+            "baseName": {
+              "contractScope": null,
+              "id": 80,
+              "name": "Person",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 79,
+              "src": "331:6:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Person_$79",
+                "typeString": "contract Person"
+              }
+            },
+            "id": 81,
+            "nodeType": "InheritanceSpecifier",
+            "src": "331:6:1"
+          }
+        ],
+        "contractDependencies": [
+          79
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 96,
+        "linearizedBaseContracts": [
+          96,
+          79
+        ],
+        "name": "Patient",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 90,
+              "nodeType": "Block",
+              "src": "394:47:1",
+              "statements": [
+                {
+                  "assignments": [
+                    87
+                  ],
+                  "declarations": [
+                    {
+                      "constant": false,
+                      "id": 87,
+                      "name": "patientName",
+                      "nodeType": "VariableDeclaration",
+                      "scope": 91,
+                      "src": "401:26:1",
+                      "stateVariable": false,
+                      "storageLocation": "storage",
+                      "typeDescriptions": {
+                        "typeIdentifier": "t_string_storage_ptr",
+                        "typeString": "string storage pointer"
+                      },
+                      "typeName": {
+                        "id": 86,
+                        "name": "string",
+                        "nodeType": "ElementaryTypeName",
+                        "src": "401:6:1",
+                        "typeDescriptions": {
+                          "typeIdentifier": "t_string_storage_ptr",
+                          "typeString": "string storage pointer"
+                        }
+                      },
+                      "value": null,
+                      "visibility": "internal"
+                    }
+                  ],
+                  "id": 89,
+                  "initialValue": {
+                    "argumentTypes": null,
+                    "id": 88,
+                    "name": "_name",
+                    "nodeType": "Identifier",
+                    "overloadedDeclarations": [],
+                    "referencedDeclaration": 83,
+                    "src": "430:5:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string storage pointer"
+                    }
+                  },
+                  "nodeType": "VariableDeclarationStatement",
+                  "src": "401:34:1"
+                }
+              ]
+            },
+            "id": 91,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "getName",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 84,
+              "nodeType": "ParameterList",
+              "parameters": [
+                {
+                  "constant": false,
+                  "id": 83,
+                  "name": "_name",
+                  "nodeType": "VariableDeclaration",
+                  "scope": 91,
+                  "src": "363:20:1",
+                  "stateVariable": false,
+                  "storageLocation": "storage",
+                  "typeDescriptions": {
+                    "typeIdentifier": "t_string_storage_ptr",
+                    "typeString": "string storage pointer"
+                  },
+                  "typeName": {
+                    "id": 82,
+                    "name": "string",
+                    "nodeType": "ElementaryTypeName",
+                    "src": "363:6:1",
+                    "typeDescriptions": {
+                      "typeIdentifier": "t_string_storage_ptr",
+                      "typeString": "string storage pointer"
+                    }
+                  },
+                  "value": null,
+                  "visibility": "internal"
+                }
+              ],
+              "src": "362:22:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 85,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "394:0:1"
+            },
+            "scope": 96,
+            "src": "345:96:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          },
+          {
+            "body": {
+              "id": 94,
+              "nodeType": "Block",
+              "src": "481:8:1",
+              "statements": []
+            },
+            "id": 95,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": true,
+            "modifiers": [],
+            "name": "getData",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 92,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "464:2:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 93,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "481:0:1"
+            },
+            "scope": 96,
+            "src": "447:42:1",
+            "stateMutability": "view",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 104,
+        "src": "311:185:1"
+      },
+      {
+        "baseContracts": [
+          {
+            "arguments": [],
+            "baseName": {
+              "contractScope": null,
+              "id": 97,
+              "name": "Person",
+              "nodeType": "UserDefinedTypeName",
+              "referencedDeclaration": 79,
+              "src": "519:6:1",
+              "typeDescriptions": {
+                "typeIdentifier": "t_contract$_Person_$79",
+                "typeString": "contract Person"
+              }
+            },
+            "id": 98,
+            "nodeType": "InheritanceSpecifier",
+            "src": "519:6:1"
+          }
+        ],
+        "contractDependencies": [
+          79
+        ],
+        "contractKind": "contract",
+        "documentation": null,
+        "fullyImplemented": true,
+        "id": 103,
+        "linearizedBaseContracts": [
+          103,
+          79
+        ],
+        "name": "Doctor",
+        "nodeType": "ContractDefinition",
+        "nodes": [
+          {
+            "body": {
+              "id": 101,
+              "nodeType": "Block",
+              "src": "569:8:1",
+              "statements": []
+            },
+            "id": 102,
+            "implemented": true,
+            "isConstructor": false,
+            "isDeclaredConst": false,
+            "modifiers": [],
+            "name": "createNewClone",
+            "nodeType": "FunctionDefinition",
+            "parameters": {
+              "id": 99,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "557:2:1"
+            },
+            "payable": false,
+            "returnParameters": {
+              "id": 100,
+              "nodeType": "ParameterList",
+              "parameters": [],
+              "src": "569:0:1"
+            },
+            "scope": 103,
+            "src": "533:44:1",
+            "stateMutability": "nonpayable",
+            "superFunction": null,
+            "visibility": "internal"
+          }
+        ],
+        "scope": 104,
+        "src": "500:82:1"
+      }
+    ],
+    "src": "0:584:1"
+  },
+  "compiler": {
+    "name": "solc",
+    "version": "0.4.19+commit.c4cbbb05.Emscripten.clang"
+  },
+  "networks": {},
+  "schemaVersion": "2.0.0",
+  "updatedAt": "2018-03-17T09:13:42.831Z"
+}
