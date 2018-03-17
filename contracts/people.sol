@@ -16,7 +16,7 @@ contract Patient {
 
     function addAdmin () {
         require(admin == address(0));
-        admin = msg.sender
+        admin = msg.sender;
     }
 
     function basicInfo (string _name, string _date, string _gen, string _nat) {
