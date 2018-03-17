@@ -10,7 +10,7 @@ contract Person {
   }
   Clone[] internal clones;
 
-  function linkClone (address _newClone) {
+  function linkClone (address _newClone) internal {
     clones.push(Clone(_newClone));
 
   }
@@ -19,11 +19,11 @@ contract Person {
 
 contract Patient is Person {
 
-  function getName (string _name) {
+  function getName (string _name) internal {
     string storage patientName = _name;
   }
 
-  function getData () view {
+  function getData () internal view {
 
   }
 
@@ -32,7 +32,7 @@ contract Patient is Person {
 
 contract Doctor is Person {
 
-  function createNewClone {
+  function createNewClone () internal {
 
   }
 
