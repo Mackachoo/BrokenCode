@@ -23,7 +23,7 @@ contract Patient {
     }
 
     function addRecord (string _ofType, string _desc) {
-        require(search() == 61);
+        //require(search() == 61);
         records.push(Record(_ofType, _desc));
     }
 
