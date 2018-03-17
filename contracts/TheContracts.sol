@@ -33,11 +33,7 @@ contract Patient is Person {
 contract Doctor is Person {
 
   function createNewClone {
-    address newClone = new CloneData();
+
   }
-
-}
-
-contract CloneData {
 
 }
