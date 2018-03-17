@@ -15,7 +15,7 @@ contract Patient {
         string name;
         uint date;
         string gen;
-        string _nat;
+        string nat;
     }
 
     Record[] public records;
