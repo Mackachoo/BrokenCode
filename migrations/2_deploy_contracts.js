@@ -1,5 +1,5 @@
-var TheContracts = artifacts.require("TheContracts");
+var people = artifacts.require("people");
 
 module.exports = function(deployer) {
-  deployer.deploy(TheContracts);
+  deployer.deploy(people);
 };
