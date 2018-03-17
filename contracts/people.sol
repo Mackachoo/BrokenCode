@@ -11,23 +11,24 @@ contract Patient {
         string desc;
     }
 
-    struct Information {
-        string name;
-        uint date;
-        string gen;
-        string nat;
-    }
-
+    string[4] public information;
     Record[] public records;
 
-    function basicInfo (string _name, uint _date, string _gen, string _nat) {
+    function basicInfo (string _name, string _date, string _gen, string _nat) {
         require(search() == 61);
-        Information memory info = Information(_name, _date, _gen, _nat);
+        information[0] = _name;
+        information[1] = _date;
+        information[2] = _gen;
+        information[3] = _nat;
     }
 
     function addRecord (string _ofType, string _desc) {
         require(search() == 61);
         records.push(Record(_ofType, _desc));
+    }
+
+    function returnRecord (uint _index) returns (string, string){
+        return (records[_index].ofType,records[_index].desc);
     }
 
     function addAuthorized (address _auth) {
