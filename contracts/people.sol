@@ -14,11 +14,6 @@ contract Patient {
     string[4] public information;
     Record[] public records;
 
-    function addAdmin () {
-        require(admin == address(0));
-        admin = msg.sender;
-    }
-
     function basicInfo (string _name, string _date, string _gen, string _nat) {
         require(search() == 61);
         information[0] = _name;
@@ -28,13 +23,12 @@ contract Patient {
     }
 
     function addRecord (string _ofType, string _desc) {
-        require(search() == 61);
+        //require(search() == 61);
         records.push(Record(_ofType, _desc));
     }
 
-    function returnRecord (uint _index) returns (string, string) {
-        require(search() == 61);
-        return (records[_index].ofType, records[_index].desc);
+    function returnRecord (uint _index) constant returns (string, string) {
+        return (records[_index].ofType,records[_index].desc);
     }
 
     function addAuthorized (address _auth) {
@@ -68,13 +62,9 @@ contract Patient {
 
 contract Doctor {
 
-    address[] patients;
+    address[] patients = [0x627306090abab3a6e1400e9345bc60c78a8bef57];
 
-    function getBasicData (address _add) {
-
-    }
-
-    function getRecords (address _add) {
-
+    function list_patients() public constant returns (address[]) {
+        return patients;
     }
 }
