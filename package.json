@@ -1,4 +1,24 @@
-"scripts": {
-  "dev": "lite-server",
-  "test": "echo \"Error: no test specified\" && exit 1"
+{
+  "name": "brokencode",
+  "version": "1.0.0",
+  "description": "",
+  "main": "IPFS.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mackachoo/BrokenCode.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mackachoo/BrokenCode/issues"
+  },
+  "homepage": "https://github.com/Mackachoo/BrokenCode#readme",
+  "dependencies": {
+    "node-modules": "^1.0.1",
+    "truffle-contract": "^3.0.4",
+    "web3": "^0.20.6"
+  }
 }

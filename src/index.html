@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="eng">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Login Page</title>
+
+    <link href="css/main.css" rel="stylesheet">
+    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+    <script src="../node_modules/web3/dist/web3.min.js"></script>
+    <!--(file:///c:/Users/mahma/OneDrive/Documents/GitHub/BrokenCode/src/node_modules/web3/dist/web3.min.js).-->
+</head>
+<body>
+    <div class="container">
+
+        <h1>Input basic patient data</h1>
+
+        <!--h2 id="basic"></h2-->
+
+        <label for="name" class="col-lg-2 control-label">Patient Name</label>
+        <input id="name" type="text">
+
+        <label for="dob" class="col-lg-2 control-label">Patient D.O.B</label>
+        <input id="dob" type="text">
+
+        <label for="gender" class="col-lg-2 control-label">Patient Gender</label>
+        <input id="gender" type="text">
+
+        <label for="nationality" class="col-lg-2 control-label">Patient Nationality</label>
+        <input id="nationality" type="text">
+
+        <button id="setBasic" class="btn btn-default">Upload Patient Info</button>
+        <!--input id="setBasic" type="button" value="clickme" onclick="app.initWeb3()"-->
+
+
+    </div>
+    <script src="js\app.js"></script>
+</body>
+</html>
